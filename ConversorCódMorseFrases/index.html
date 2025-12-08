@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Decodificador de Código Morse</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/179/179895.png">
+  </head>
+  <body>
+    <nav>
+      <h1>Decodificador de Código Morse</h1>
+    </nav>
+    <details class="morseRef">
+      <img
+        class="refSheet"
+        src="https://imgv2-2-f.scribdassets.com/img/document/313270717/original/6cee57f4d0/1572272364?v=1"
+        alt="morse code sheet"
+      />
+      <summary>
+        <ion-icon name="book"></ion-icon>
+      </summary>
+    </details>
+    <form>
+      <textarea
+        name="Morsefield"
+        id="morseTextArea"
+        placeholder="Morse(Entrada)"
+      ></textarea
+      ><ion-icon name="swap-vertical-outline" id="swapBtn"></ion-icon>
+      <textarea
+        name="Textfield"
+        id="textArea"
+        placeholder="Texto(Saída)"
+        readonly
+      ></textarea>
+      <div class="translateBtn"><ion-icon name="play"></ion-icon></div>
+    </form>
+    <p>Segredos encontrados: <span id="count">0</span>/3</p>
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

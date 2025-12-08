@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+
+html, body {
+  --main-font: Cutive Mono;
+  --main-text-color: black;
+  --bg-color: white;
+  --secondary-bg-color: #d9d9d9;
+  --main-text-color-dark: white;
+  --bg-color-dark: #323232;
+  --secondary-bg-color-dark: #191919;
+
+
+  font-family: var(--main-font);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  transition: 0.3s;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--bg-color);
+    color: var(--main-text-color);
+  }
+  textarea {
+    background-color: var(--secondary-bg-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-color-dark);
+    color: var(--main-text-color-dark);
+  }
+  textarea {
+    background-color: var(--secondary-bg-color-dark);
+    color: white;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+
+ion-icon {
+  cursor: pointer;
+}
+
+nav {
+  display: solid;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 80px;
+  position: relative;
+}
+
+nav > h1 {
+  font-weight: 300;
+  align-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  animation: typing 2s steps(29, end);
+}
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: 29ch; 
+    } /* 30 caracteres de largura */
+}
+/* texto antigo. ele fazia com que o codigo ignorasse as demais palavras porque passava o limite de 510px
+@keyframes typing {
+  from {
+    width: 0%;
+    border-right: solid;
+  }
+
+  to {
+    width: 510px;
+  }
+}*/
+
+.morseRef {
+  position: absolute;
+  z-index: 4;
+  bottom: 20px;
+  right: 30px;
+  font-size: 2rem;
+}
+
+.refSheet {
+  width: 250px;
+  position: absolute;
+  z-index: 4;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 10px;
+}
+
+summary {
+  list-style: none;
+}
+
+form {
+  width: 550px;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  align-items: center;
+}
+
+textarea {
+  width: 500px;
+  height: 282px;
+  border: solid 2px;
+  padding: 15px;
+  border-radius: 10px;
+  resize: none;
+  position: relative;
+  color: var(--bg-color);
+}
+
+form #swapBtn {
+  font-size: 3.5rem;
+}
+
+.translateBtn {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  right: 4%;
+  top: 31%;
+  font-size: 1.8rem;
+  display: none;
+  transition: 0.2s;
+}
+
+.translateBtn > ion-icon {
+  color: white;
+}
+
+.translateBtn:hover {
+  background-color: grey;
+}
+
+textarea[name="Morsefield"]:not(:placeholder-shown) ~ .translateBtn {
+  display: flex;
+}
+
+@media (max-width: 540px) {
+  form {
+    align-items: center;
+    width: 350px;
+  }
+  textarea {
+    width: 280px;
+    height: 200px;
+  }
+  .translateBtn {
+    right: 10%;
+    top: 30%;
+  }
+  nav > h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/*  secretos   */
+.sos {
+  --main-text-color: white;
+  --bg-color: #EE3E3E;
+  --secondary-bg-color: #F1F1F1;
+  --main-text-color-dark: white;
+  --bg-color-dark: #EE3E3E;
+  --secondary-bg-color-dark: #F1F1F1;
+}
+
+.classic {
+  --main-text-color: #000000;
+  --bg-color: #FFFADA;
+  --secondary-bg-color: #D4A373;
+  --main-text-color-dark: #000000;
+  --bg-color-dark: #FFFADA;
+  --secondary-bg-color-dark: #D4A373;
+}
+
+.military {
+  --main-text-color: white;
+  --bg-color: #588157;
+  --secondary-bg-color: #283618;
+  --main-text-color-dark: white;
+  --bg-color-dark: #588157;
+  --secondary-bg-color-dark: #283618;
+}
